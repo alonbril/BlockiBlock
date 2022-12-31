@@ -48,13 +48,13 @@ class Transaction {
 let numOfBlock = 1;
 
 class Block {
-    constructor(timestamp, transaction, previousHash="") {
+    constructor(timestamp, transactions, previousHash="") {
         this.timestamp = timestamp;
-        this.transaction = transaction;
+        this.transactions = transactions;
         this.previousHash = previousHash;
         this.hash = this.calculateHash()
         this.nonce = 0;
-        this.initMerkleTree(transaction);
+        this.initMerkleTree(transactions);
     }
 
      initMerkleTree() {
